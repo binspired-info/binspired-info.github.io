@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Tableau Dashboard</title>
+  <style>
+    body, html { margin: 0; padding: 0; height: 100%; }
+    #vizContainer { width: 100%; height: 100vh; }
+  </style>
+</head>
+<body>
+  <div id="vizContainer">
+    <!-- Paste your Tableau snippet below exactly -->
+    <div class="tableauPlaceholder" id="viz1745721867840" style="position: relative">
+      <!-- …all the object/param/script code you got from Tableau… -->
+    </div>
+    <script src="https://public.tableau.com/javascripts/api/viz_v1.js"></script>
+  </div>
+</body>
+</html>
