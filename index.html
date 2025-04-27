@@ -1,56 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Tableau Dashboard</title>
-  <style>
-    /* fill the browser window */
-    body, html { margin: 0; padding: 0; height: 100%; }
-    #vizContainer { width: 100%; height: 100vh; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <style>
+        /* This styles the entire page */
+        body {
+            margin: 0; /* Remove default browser margins */
+            display: flex; /* Enable flexbox for alignment */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full height of the viewport */
+            background-color: #f5f5f5; /* Light background color */
+            font-family: Arial, sans-serif; /* Set a clean font */
+        }
+
+        /* This styles the content container */
+        .container {
+            width: 80%; /* The width of the container */
+            max-width: 1200px; /* Maximum width of the container */
+            background-color: #ffffff; /* White background for the content */
+            padding: 20px; /* Add space inside the container */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+            border-radius: 8px; /* Rounded corners */
+            text-align: center; /* Center-align the text */
+        }
+    </style>
 </head>
 <body>
-  <div id="vizContainer">
-    <!-- Tableau embed snippet -->
-    <div class='tableauPlaceholder' id='viz1745771535913' style='position: relative'>
-      <noscript>
-        <a href='#'>
-          <img alt='drugi ' src='https://public.tableau.com/static/images/Te/Test_zg_viz/drugi/1_rss.png' style='border: none' />
-        </a>
-      </noscript>
-      <object class='tableauViz' style='display:none;'>
-        <param name='host_url'            value='https%3A%2F%2Fpublic.tableau.com%2F' />
-        <param name='embed_code_version'  value='3' />
-        <param name='site_root'           value='' />
-        <param name='name'                value='Test_zg_viz/drugi' />
-        <param name='tabs'                value='no' />
-        <param name='toolbar'             value='yes' />
-        <param name='static_image'        value='https://public.tableau.com/static/images/Te/Test_zg_viz/drugi/1.png' />
-        <param name='animate_transition'  value='yes' />
-        <param name='display_static_image'value='yes' />
-        <param name='display_spinner'     value='yes' />
-        <param name='display_overlay'     value='yes' />
-        <param name='display_count'       value='yes' />
-        <param name='language'            value='en-US' />
-        <param name='filter'              value='publish=yes' />
-      </object>
+    <div class="container">
+        <h1>Welcome to My Page</h1>
+        <p>This is an example of centered content.</p>
+        <!-- Add your Tableau visualization iframe here -->
+        <iframe 
+            src="https://public.tableau.com/views/YourVizLinkHere" 
+            width="100%" 
+            height="500" 
+            frameborder="0">
+        </iframe>
     </div>
-    <script type='text/javascript'>
-      var divElement = document.getElementById('viz1745771535913');
-      var vizElement = divElement.getElementsByTagName('object')[0];
-      if (divElement.offsetWidth > 800) {
-        vizElement.style.width='1000px'; vizElement.style.height='827px';
-      } else if (divElement.offsetWidth > 500) {
-        vizElement.style.width='1000px'; vizElement.style.height='827px';
-      } else {
-        vizElement.style.width='100%';  vizElement.style.height='1127px';
-      }
-      var scriptElement = document.createElement('script');
-      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-      vizElement.parentNode.insertBefore(scriptElement, vizElement);
-    </script>
-  </div>
 </body>
 </html>
 
