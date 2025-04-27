@@ -3,48 +3,67 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Tableau Dashboard</title>
+  <title>Under Construction Viz</title>
   <style>
-    /* Make the body fill the screen, remove margins */
+    /* 1) Full‐screen flex parent to center its child */
     html, body {
       margin: 0;
       padding: 0;
       height: 100vh;
       display: flex;
-      justify-content: center;  /* centers horizontally */
-      align-items: center;      /* centers vertically */
+      justify-content: center;  /* horizontal center */
+      align-items: center;      /* vertical center */
+      background: #fff;
     }
 
-    /* Constrain the viz so it never overflows the viewport */
+    /* 2) Viz container gets a max width so it never runs off the screen */
     #vizContainer {
-      max-width: 100%;
-      max-height: 100%;
+      width: 90%;
+      max-width: 1200px;
+      /* if you want some space above/below: */
+      padding: 1rem 0;
     }
 
-    /* Ensure the viz itself scales responsively */
+    /* 3) Make the embed fill its container */
     .tableauPlaceholder, .tableauViz {
       width: 100% !important;
-      height: auto !important;
+      height: 100% !important;
     }
   </style>
 </head>
 <body>
   <div id="vizContainer">
-    <!-- Your Tableau embed snippet -->
-    <div class='tableauPlaceholder' id='viz1745771535913' style='position: relative'>
+    <!-- Paste your updated snippet here (with your new viz ID) -->
+    <div class="tableauPlaceholder" id="viz1745771535913" style="position: relative;">
       <noscript>
-        <a href='#'>
-          <img alt='drugi ' src='https://public.tableau.com/static/images/Te/Test_zg_viz/drugi/1_rss.png' style='border: none' />
+        <a href="#">
+          <img alt="drugi" src="https://public.tableau.com/static/images/Te/Test_zg_viz/drugi/1_rss.png" style="border:none;" />
         </a>
       </noscript>
-      <object class='tableauViz' style='display:none;'>
-        <!-- (all your <param> tags here) -->
+      <object class="tableauViz">
+        <param name="host_url"            value="https%3A%2F%2Fpublic.tableau.com%2F" />
+        <param name="embed_code_version"  value="3" />
+        <param name="site_root"           value="" />
+        <param name="name"                value="Test_zg_viz/drugi" />
+        <param name="tabs"                value="no" />
+        <param name="toolbar"             value="yes" />
+        <param name="static_image"        value="https://public.tableau.com/static/images/Te/Test_zg_viz/drugi/1.png" />
+        <param name="animate_transition"  value="yes" />
+        <param name="display_static_image"value="yes" />
+        <param name="display_spinner"     value="yes" />
+        <param name="display_overlay"     value="yes" />
+        <param name="display_count"       value="yes" />
+        <param name="language"            value="en-US" />
+        <param name="filter"              value="publish=yes" />
       </object>
     </div>
-    <script type='text/javascript'>
-      /* your sizing + script code here */
+    <script type="text/javascript">
+      // This script just injects the Tableau JS API. No manual sizing needed.
+      var scriptElement = document.createElement('script');
+      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+      document.getElementById('viz1745771535913')
+              .appendChild(scriptElement);
     </script>
   </div>
 </body>
 </html>
-
