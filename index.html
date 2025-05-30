@@ -19,7 +19,7 @@
     /* The white “card” container */
     .container {
       width: 80%;
-      max-width: 1366px;             /* match your viz’s native width */
+      max-width: 1366px;  /* match your viz’s native width */
       background-color: #ffffff;
       padding: 20px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -27,47 +27,26 @@
       text-align: center;
     }
 
-    /* Ensure the viz fills the container */
-    .tableauPlaceholder, .tableauViz {
-      width: 100% !important;
-      height: 768px !important;      /* match your viz’s native height */
+    /* Ensure the Looker iframe fills the container */
+    .lookerEmbed {
+      width: 100%;
+      height: 80vh;       /* adjust as needed for your report’s height */
+      border: none;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>ZAGREB VIZ _ transparentnost na dlanu</h1>
-    <!-- Tableau embed snippet -->
-    <div class="tableauPlaceholder" id="viz1745771535913" style="position: relative;">
-      <noscript>
-        <a href="#">
-          <img alt="drugi" src="https://public.tableau.com/static/images/Te/Test_zg_viz/drugi/1_rss.png" style="border:none;" />
-        </a>
-      </noscript>
-      <object class="tableauViz">
-        <param name="host_url"            value="https%3A%2F%2Fpublic.tableau.com%2F" />
-        <param name="embed_code_version"  value="3" />
-        <param name="site_root"           value="" />
-        <param name="name"                value="Test_zg_viz/drugi" />
-        <param name="tabs"                value="no" />
-        <param name="toolbar"             value="yes" />
-        <param name="static_image"        value="https://public.tableau.com/static/images/Te/Test_zg_viz/drugi/1.png" />
-        <param name="animate_transition"  value="yes" />
-        <param name="display_static_image"value="yes" />
-        <param name="display_spinner"     value="yes" />
-        <param name="display_overlay"     value="yes" />
-        <param name="display_count"       value="yes" />
-        <param name="language"            value="en-US" />
-        <param name="filter"              value="publish=yes" />
-      </object>
-    </div>
-    <!-- Load the Tableau JS API -->
-    <script type="text/javascript">
-      var scriptElement = document.createElement('script');
-      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-      document.getElementById('viz1745771535913')
-              .appendChild(scriptElement);
-    </script>
+
+    <!-- Looker Studio embed snippet -->
+    <iframe
+      class="lookerEmbed"
+      src="https://lookerstudio.google.com/embed/reporting/9dff10c2-ea91-4c4e-96fc-99504147fa72/page/NFWMF"
+      allowfullscreen
+      sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+    </iframe>
+
   </div>
 </body>
 </html>
