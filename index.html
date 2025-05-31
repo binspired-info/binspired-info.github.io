@@ -2,82 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- Ensure the page scales correctly on mobile -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zagreb VIZ – Embedded Looker Report</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zagreb VIZ Report</title>
   <style>
-    /* 1) Reset margins/padding and force html/body to fill the viewport */
+    /* Optional: make the iframe fill the viewport */
     html, body {
+      height: 100%;
       margin: 0;
-      padding: 0;
-      /* Use the dynamic viewport unit to avoid 100vh quirks on mobile */
-      height: 100dvh;
-      overflow: hidden;
-      /* On iOS devices, push content up so that it isn’t hidden beneath the Home indicator */
-      padding-bottom: env(safe-area-inset-bottom);
     }
-
-    /* 2) Make the iframe fill exactly the visible area (accounting for safe‐area) */
-    iframe {
+    .report-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .report-container iframe {
       position: absolute;
       top: 0;
       left: 0;
-      width: 100vw;
-      /* Subtract the bottom safe‐area inset so the Looker nav isn’t underneath the iPhone home bar */
-      height: calc(100dvh - env(safe-area-inset-bottom));
-      border: none;
-    }
-
-    /* 3) (Optional) Provide a “View full report” link if mobile still can’t show the tabs */
-    #mobile‐fallback {
-      display: none;
-    }
-    @media (max-width: 768px) {
-      #mobile‐fallback {
-        display: block;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: #fff;
-        padding: 12px;
-        text-align: center;
-        font-size: 1rem;
-        box-shadow: 0 -1px 4px rgba(0,0,0,0.2);
-        z-index: 9999;
-      }
-      iframe {
-        /* Shrink the iframe to make room for the fallback link at the bottom */
-        height: calc(100dvh - env(safe-area-inset-bottom) - 56px);
-      }
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
   </style>
 </head>
-<body>
-  <!-- 
-    1) We dropped width="600" height="443" so that CSS can make this fill the viewport.
-    2) We removed "/page/mSXMF" so that the Looker Studio embed can draw its own page tabs.
-  -->
-  <iframe
-    src="https://lookerstudio.google.com/embed/reporting/3ce0515c-8c1f-41a1-9c3f-24cd8b6edae0"
-    allowfullscreen
-    sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
-  </iframe>
 
-  <!--
-    If for some reason the bottom‐tabs still don’t render on certain phones,
-    users can tap this link to open the “full Looker Studio” page in a new tab,
-    where they’ll see the navigation at the bottom.
-  -->
-  <a
-    id="mobile‐fallback"
-    href="https://lookerstudio.google.com/reporting/3ce0515c-8c1f-41a1-9c3f-24cd8b6edae0"
-    target="_blank"
-    rel="noopener noreferrer">
-    📊 View full report (tap here to switch pages)
-  </a>
+<body>
+  <div class="report-container">
+    <iframe
+      src="https://lookerstudio.google.com/embed/reporting/3ce0515c-8c1f-41a1-9c3f-24cd8b6edae0/page/mSXMF"
+      allowfullscreen
+      sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+    ></iframe>
+  </div>
 </body>
 </html>
+
 
 
 
