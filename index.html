@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Zagreb VIZ</title>
   <style>
-    /* Remove all page chrome and make iframe fill the screen */
+    /* Reset margins and ensure the iframe fills exactly the viewport */
     html, body {
       margin: 0;
       padding: 0;
@@ -15,21 +15,26 @@
     iframe {
       border: none;
       width: 100vw;
-      height: 100vh;
+      height: 100%;   /* Fill parent, avoiding 100vh quirks on mobile */
       display: block;
     }
   </style>
 </head>
 <body>
-  <!-- Only the Looker Studio report -->
+  <!-- Embed the report’s root URL so mobile nav appears -->
   <iframe
-    src="https://lookerstudio.google.com/embed/reporting/3ce0515c-8c1f-41a1-9c3f-24cd8b6edae0/page/mSXMF" 
+    src="https://lookerstudio.google.com/embed/reporting/3ce0515c-8c1f-41a1-9c3f-24cd8b6edae0"
     allowfullscreen
-    sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+    sandbox="
+      allow-storage-access-by-user-activation
+      allow-scripts
+      allow-same-origin
+      allow-popups
+      allow-popups-to-escape-sandbox
+    ">
   </iframe>
 </body>
 </html>
-
 
 
 
